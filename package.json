@@ -1,0 +1,44 @@
+{
+  "name": "vc-cli",
+  "version": "1.0.0",
+  "description": "Initialization tool for vue project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vue",
+    "cli",
+    "initial"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:huqiliang/vc-cli.git"
+  },
+  "author": "huqiliang",
+  "config": {
+    "ghooks": {
+      "commit-msg": "validate-commit-msg"
+    },
+    "validate-commit-msg": {
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "test",
+        "chore",
+        "refactor",
+        "opti"
+      ],
+      "warnOnFail": false,
+      "maxSubjectLength": 100,
+      "subjectPattern": ".+",
+      "subjectPatternErrorMsg": "请输入message信息!",
+      "helpMessage": "Commit message 格式错误， http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html"
+    }
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "validate-commit-msg": "^2.14.0"
+  }
+}
