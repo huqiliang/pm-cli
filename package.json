@@ -2,8 +2,10 @@
   "name": "vc-cli",
   "version": "1.0.0",
   "description": "Initialization tool for vue project",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "dev": "babel src -d lib && node  lib/index",
+    "build": "babel src -d lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -39,7 +41,26 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^5.16.0",
     "ghooks": "^2.0.4",
-    "validate-commit-msg": "^2.14.0"
+    "validate-commit-msg": "^2.14.0",
+    "vuepress": "^1.0.0-alpha.46",
+    "webpack": "^4.29.6"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "clear": "^0.1.0",
+    "clui": "^0.3.6",
+    "configstore": "^4.0.0",
+    "figlet": "^1.2.1",
+    "inquirer": "^6.2.2",
+    "lodash": "^4.17.11",
+    "minimist": "^1.2.0",
+    "simple-git": "^1.110.0"
   }
 }
