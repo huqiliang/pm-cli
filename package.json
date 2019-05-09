@@ -26,18 +26,7 @@
   "author": "huqiliang",
   "config": {
     "ghooks": {
-      "pre-commit": "lint-staged",
       "commit-msg": "validate-commit-msg"
-    },
-    "lint-staged": {
-      "*.{js,ts}": [
-        "eslint --fix",
-        "git add"
-      ],
-      "packages/*": [
-        "eslint --fix",
-        "git add"
-      ]
     },
     "validate-commit-msg": {
       "types": [
