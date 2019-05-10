@@ -3,7 +3,10 @@
   "workspaces": [
     "packages"
   ],
-  "name": "vc-cli",
+  "bin": {
+    "pm": "./packages/index.js"
+  },
+  "name": "pm-cli",
   "version": "1.0.0",
   "description": "Initialization tool for vue project",
   "main": "lib/index.js",
@@ -62,11 +65,13 @@
     "chalk": "^2.4.2",
     "clear": "^0.1.0",
     "clui": "^0.3.6",
+    "commander": "^2.20.0",
     "configstore": "^4.0.0",
     "figlet": "^1.2.1",
     "inquirer": "^6.2.2",
     "lodash": "^4.17.11",
     "minimist": "^1.2.0",
+    "shelljs": "^0.8.3",
     "simple-git": "^1.110.0"
   }
 }
