@@ -1,33 +1,25 @@
-import program from "commander";
-import CLI from "clui";
+import ora from "ora";
+const download = require("download-git-repo");
 import shell from "shelljs";
-const Spinner = CLI.Spinner;
-program
-  .version("1.0.1")
-  .usage("app_name")
-  .description("构建hapi模板")
-  .parse(process.argv);
+const spinner = ora("downloading template");
 
-if (!program.args.length) {
-  program.help();
-}
-if (program.args.length === 1) {
-  shell.mkdir("-p", program.args[0]);
-  shell.cd(program.args[0]);
-  shell.exec("git init");
-
-  const status = new Spinner("正在下载 请稍候...");
-  status.start();
-
-  shell.exec("git pull git@github.com:huqiliang/gc_iview.git", code => {
-    if (code !== 0) {
-      console.log("Error! Try again");
-      shell.exit(1);
+const init = args => {
+  // shell.mkdir("-p", args[0]);
+  // shell.cd(args[0]);
+  // shell.exec("git init");
+  const temp = args[0];
+  spinner.start();
+  download("huqiliang/download_test", temp, { clone: false }, err => {
+    console.log("====================================");
+    console.log(err);
+    console.log("====================================");
+    if (!err) {
+      spinner.stop();
+      console.log("👏 👏 下载完成! 可以开始写代码了! 👏 👏");
+    } else {
+      console.log(err);
     }
-    console.log("====================================");
-    console.log(code);
-    console.log("====================================");
-    status.stop();
-    console.log("👏 👏 Completed! You are  good to go! 👏 👏");
   });
-}
+};
+
+export default init;
