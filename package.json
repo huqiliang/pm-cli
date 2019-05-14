@@ -4,15 +4,15 @@
     "packages"
   ],
   "bin": {
-    "pm": "./packages/index.js"
+    "pm": "./build/bin/pm.js"
   },
   "name": "pm-cli",
   "version": "1.0.0",
   "description": "Initialization tool for vue project",
-  "main": "lib/index.js",
+  "main": "src/bin/index.js",
   "scripts": {
-    "dev": "babel src -d packages && node  packages/index",
-    "build": "babel src -d packages",
+    "dev": "gulp && npm link",
+    "build": "gulp product",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -54,12 +54,15 @@
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.24.1",
     "eslint": "^5.16.0",
     "ghooks": "^2.0.4",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-watch": "^5.0.1",
     "validate-commit-msg": "^2.14.0",
-    "vuepress": "^1.0.0-alpha.46",
-    "webpack": "^4.29.6"
+    "vuepress": "^1.0.0-alpha.46"
   },
   "dependencies": {
     "chalk": "^2.4.2",
