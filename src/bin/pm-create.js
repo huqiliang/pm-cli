@@ -5,10 +5,6 @@ import _ from "lodash";
 import git from "../modules/git";
 
 const args = program.args;
-program
-  .usage("<dir-name>")
-  .option("-c, --clone", "use git clone")
-  .option("--offline", "use cached template");
 console.log("====================================");
 console.log(program.args);
 console.log("====================================");
