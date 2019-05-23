@@ -2,7 +2,7 @@
 home: true
 # heroImage: /logo.jpg
 actionText: 快速上手 →
-actionLink: /android/
+actionLink: /guide/introduce/
 features:
 - title: 项目创建
   details: 一键创建项目,一键初始化项目。

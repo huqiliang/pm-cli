@@ -5,10 +5,16 @@ var babel = require("gulp-babel");
 var minify = require("gulp-minify");
 var source = "src/**/*.js";
 var watcher = watch(source, ["uglify", "reload"]);
+const shell = require("gulp-shell");
+const path = require("path");
 
-const build = () => {
+const build = filePath => {
+  const sourcePath = filePath ? filePath : source;
+  const distPath = filePath
+    ? path.dirname(filePath.replace("src", "build"))
+    : "build";
   gulp
-    .src(source)
+    .src(sourcePath)
     .pipe(plumber())
     .pipe(babel())
     .pipe(
@@ -19,12 +25,14 @@ const build = () => {
         noSource: true
       })
     )
-    .pipe(gulp.dest("build"));
+    .pipe(gulp.dest(distPath));
+  // .pipe(shell(["cd build", "npm link"]));
 };
 gulp.task("default", () => {
+  build();
   watcher.on("change", event => {
     console.log("文件路径:" + event);
-    build();
+    build(event);
   });
 });
 

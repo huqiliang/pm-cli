@@ -5,9 +5,7 @@ import _ from "lodash";
 import git from "../modules/git";
 
 const args = program.args;
-console.log("====================================");
-console.log(program.args);
-console.log("====================================");
+console.log("bbb444");
 if (_.isEmpty(args)) {
   program.help();
 } else {

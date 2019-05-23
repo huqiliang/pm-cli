@@ -11,6 +11,7 @@ program
   .command("create", "create a new project from a template")
   .command("add", "use eslint to lint a roject ")
   .command("lint", "use eslint to lint a roject ")
+  .command("run", "run a server")
   .command("publish", "pushlish a project")
   .description("前端项目生成管理工具");
 

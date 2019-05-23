@@ -11,10 +11,11 @@
   "description": "Initialization tool for vue project",
   "main": "src/bin/index.js",
   "scripts": {
-    "dev": "gulp && npm link",
+    "dev": "gulp",
     "build": "gulp product",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
+    "docs:publish": "sh deploy.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -60,6 +61,7 @@
     "gulp-babel": "^8.0.0",
     "gulp-minify": "^3.1.0",
     "gulp-plumber": "^1.2.1",
+    "gulp-shell": "^0.7.0",
     "gulp-watch": "^5.0.1",
     "validate-commit-msg": "^2.14.0",
     "vuepress": "^1.0.0-alpha.46"
@@ -71,8 +73,12 @@
     "commander": "^2.20.0",
     "configstore": "^4.0.0",
     "download-git-repo": "^1.1.0",
+    "ejs": "^2.6.1",
+    "express": "^4.17.0",
     "figlet": "^1.2.1",
+    "http-proxy-middleware": "^0.19.1",
     "inquirer": "^6.2.2",
+    "koa": "^2.7.0",
     "lodash": "^4.17.11",
     "minimist": "^1.2.0",
     "ora": "^3.4.0",
