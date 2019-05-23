@@ -26,38 +26,9 @@ module.exports = {
           "/base/list",
           "/base/list",
           "/base/list",
-          "/base/list"
+          "/base/run"
         ]
       }
-
-      // {
-      //   title: "介绍",
-      //   collapsable: false,
-      //   link: "/guide/introduce"
-      //   // children: ["/guide/introduce"]
-      // },
-      // {
-      //   title: "安装",
-      //   collapsable: false
-      //   // children: ["/guide/install"]
-      // },
-      // {
-      //   title: "配置",
-      //   collapsable: false,
-      //   children: [
-      //     {
-      //       title: "YARN",
-      //       collapsable: false,
-      //       link: "/guide/install"
-      //     }
-      //   ]
-      // },
-      // {
-      //   title: "使用",
-      //   children: [
-      //     /* ... */
-      //   ]
-      // }
     ],
     sidebarDepth: 2, // e'b将同时提取markdown中h2 和 h3 标题，显示在侧边栏上。
     lastUpdated: "Last Updated" // 文档更新时间：每个文件git最后提交的时间
