@@ -14,6 +14,5 @@ program
   .command("lint", "检测项目代码")
   .command("run", "启动本地查看")
   .command("publish", "项目发布")
-  .description("前端项目管理工具");
-
-program.parse(process.argv);
+  .description("前端项目管理工具")
+  .parse(process.argv);

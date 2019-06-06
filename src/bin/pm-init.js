@@ -18,8 +18,6 @@ const args = program.args;
 //   git.clone(args);
 // }
 async function init(path) {
-  console.log("====================================");
-  console.log("====================================");
   if (file.directoryExists(path)) {
     const a = await inquirer.prompt([
       {
