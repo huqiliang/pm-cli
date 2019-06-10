@@ -1,7 +1,17 @@
 #!/usr/bin/env node
 
-import program from "commander";
+import _ from "lodash";
+import Table from "cli-table";
+import file from "../modules/file";
 
-const args = program.args;
+file.readStorage().then(data => {
+  const project = _.find(data, { id: _.parseInt(process.argv[2]) });
+  var table = new Table({
+    head: ["key", "value"]
+  });
 
-console.log(args);
+  _.map(project, (val, key) => {
+    table.push({ [key]: val });
+  });
+  console.log(table.toString());
+});

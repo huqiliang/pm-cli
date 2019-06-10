@@ -1,11 +1,15 @@
 import fs from "fs";
 import path from "path";
+import jsonfile from "jsonfile";
 
 export default {
   getCurrentDirectoryBase: () => {
     return path.basename(process.cwd());
   },
-
+  readStorage: () => {
+    const json = path.join(__dirname, "../storage.json");
+    return jsonfile.readFile(json);
+  },
   directoryExists: filePath => {
     try {
       return fs.statSync(filePath).isDirectory();
