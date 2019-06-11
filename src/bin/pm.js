@@ -13,6 +13,7 @@ program
   .command("show", "查看项目基础信息")
   .command("lint", "检测项目代码")
   .command("run", "启动本地查看")
+  .command("build", "打包本地项目")
   .command("publish", "项目发布")
   .description("前端项目管理工具");
 program.parse(process.argv);
