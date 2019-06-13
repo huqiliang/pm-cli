@@ -7,8 +7,12 @@ export default {
     return path.basename(process.cwd());
   },
   readStorage: () => {
-    const json = path.join(__dirname, "../storage.json");
-    return jsonfile.readFile(json);
+    const jsonPath = path.join(__dirname, "../storage.json");
+    return jsonfile.readFile(jsonPath);
+  },
+  saveStorage: json => {
+    const jsonPath = path.join(__dirname, "../storage.json");
+    return jsonfile.writeFile(jsonPath, json);
   },
   directoryExists: filePath => {
     try {

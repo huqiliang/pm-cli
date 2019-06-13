@@ -2,11 +2,12 @@
 
 import _ from "lodash";
 import Table from "cli-table";
+import chalk from "chalk";
 import file from "../modules/file";
 
 file.readStorage().then(data => {
   if (data.length > 0) {
-    const head = ["id", "title", "ppmp-token", "yapi-token", "jenkins-name"];
+    const head = ["id", "title", "ppmp_token", "yapi_token", "tapd_url"];
     var table = new Table({
       head
     });
@@ -20,6 +21,6 @@ file.readStorage().then(data => {
 
     console.log(table.toString());
   } else {
-    console.log("暂无项目信息");
+    console.log(chalk.yellow("项目列表为空"));
   }
 });

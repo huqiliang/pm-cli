@@ -70,12 +70,14 @@
     "vuepress": "^1.0.0-alpha.46"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "chalk": "^2.4.2",
     "clear": "^0.1.0",
     "cli-table": "^0.3.1",
     "clui": "^0.3.6",
     "commander": "^2.20.0",
     "configstore": "^4.0.0",
+    "dawn": "^1.8.3",
     "download-git-repo": "^1.1.0",
     "ejs": "^2.6.1",
     "express": "^4.17.0",
